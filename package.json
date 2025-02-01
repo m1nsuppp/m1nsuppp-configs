@@ -1,0 +1,15 @@
+{
+  "name": "m1nsuppp-configs",
+  "version": "0.0.0",
+  "description": "m1nsuppp's fe development configs",
+  "author": "m1nsuppp",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "pnpm dlx only-allow pnpm"
+  },
+  "packageManager": "pnpm@8.15.2",
+  "workspaces": [
+    "packages/*"
+  ]
+}

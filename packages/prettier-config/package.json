@@ -1,0 +1,21 @@
+{
+  "name": "@m1nsuppp/prettier-config",
+  "description": "m1nsuppp's prettier config",
+  "type": "module",
+  "version": "0.0.0",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "m1nsuppp",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3"
+  },
+  "peerDependencies": {
+    "@types/prettier": "^3"
+  }
+}
