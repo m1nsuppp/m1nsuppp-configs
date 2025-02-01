@@ -2,8 +2,9 @@
   "name": "@m1nsuppp/prettier-config",
   "description": "m1nsuppp's prettier config",
   "type": "module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
+  "types": "index.d.ts",
   "files": [
     "index.js"
   ],
