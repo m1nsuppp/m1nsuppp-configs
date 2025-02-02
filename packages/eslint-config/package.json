@@ -1,6 +1,6 @@
 {
   "name": "@m1nsuppp/eslint-config",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "m1nsuppp's eslint configs",
   "type": "module",
   "main": "index.js",
@@ -16,7 +16,7 @@
   "peerDependencies": {
     "eslint": "^9"
   },
-  "devDependencies": {
+  "dependencies": {
     "@eslint/js": "^9.19.0",
     "@typescript-eslint/eslint-plugin": "^8.22.0",
     "@typescript-eslint/parser": "^8.22.0",
