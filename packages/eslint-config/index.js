@@ -19,7 +19,7 @@ const configs = [
     },
     rules: {
       semi: ["error", "always"],
-      eqeqeq: ["error", "smart"],
+      eqeqeq: ["error", "always", { null: "ignore" }],
       curly: ["error"],
       quotes: ["error", "single"],
       indent: ["error", 2],
@@ -29,6 +29,25 @@ const configs = [
       "@typescript-eslint/no-unused-vars": "error",
       "@typescript-eslint/explicit-function-return-type": "error",
       "unicorn/filename-case": ["error", { case: "kebabCase" }],
+      "prefer-const": [
+        "error",
+        { destructuring: "all", ignoreReadBeforeAssign: false },
+      ],
+      "no-magic-numbers": [
+        "error",
+        {
+          ignore: [],
+          ignoreArrayIndexes: false,
+          ignoreDefaultValues: false,
+          ignoreClassFieldInitialValues: false,
+          enforceConst: false,
+          detectObjects: true,
+          ignoreEnums: true,
+          ignoreNumericLiteralTypes: false,
+          ignoreReadonlyClassProperties: true,
+          ignoreTypeIndexes: false,
+        },
+      ],
     },
   },
 ];
