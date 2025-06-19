@@ -1,53 +1,36 @@
-import jsPlugin from "@eslint/js";
-import tsPlugin from "@typescript-eslint/eslint-plugin";
-import unicornPlugin from "eslint-plugin-unicorn";
-import tsParser from "@typescript-eslint/parser";
+import loveConfig from "eslint-config-love";
+import eslintConfigPrettier from "eslint-config-prettier";
 
-/** @type {import('eslint').Linter.Config[]} */
-const configs = [
-  jsPlugin.configs.recommended,
+/**
+ * A shared ESLint configuration for the repository.
+ *
+ * @type {Array<import("eslint").Linter.Config>}
+ * */
+export const config = [
   {
+    ...loveConfig,
     files: ["**/*.ts", "**/*.tsx"],
-    languageOptions: {
-      parser: tsParser,
-      ecmaVersion: "latest",
-      sourceType: "module",
-    },
-    plugins: {
-      "@typescript-eslint": tsPlugin,
-      unicorn: unicornPlugin,
-    },
     rules: {
-      semi: ["error", "always"],
-      eqeqeq: ["error", "always", { null: "ignore" }],
-      curly: ["error"],
-      quotes: ["error", "single"],
-      indent: ["error", 2],
-      "object-shorthand": ["error", "always"],
-      "no-var": "error",
-      "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": "error",
-      "@typescript-eslint/explicit-function-return-type": "error",
-      "unicorn/filename-case": ["error", { case: "kebabCase" }],
-      "prefer-const": [
+      ...loveConfig.rules,
+      "@typescript-eslint/triple-slash-reference": "off",
+      // https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/avoid-new.md
+      "promise/avoid-new": "off",
+      /** Disables checking an asynchronous function passed as a JSX attribute expected to be a function that returns `void`. */
+      "@typescript-eslint/no-misused-promises": [
         "error",
-        { destructuring: "all", ignoreReadBeforeAssign: false },
+        { checksVoidReturn: { attributes: false } },
       ],
-      "no-magic-numbers": [
-        "error",
+      "@typescript-eslint/no-magic-numbers": [
+        "warn",
         {
-          ignore: [],
-          ignoreArrayIndexes: false,
-          ignoreDefaultValues: false,
-          ignoreClassFieldInitialValues: false,
-          enforceConst: false,
-          detectObjects: true,
-          ignoreEnums: true,
-          ignoreNumericLiteralTypes: false,
-          ignoreReadonlyClassProperties: true,
-          ignoreTypeIndexes: false,
+          ignore: [
+            0, 1, -1, 7, 12, 24, 30, 60, 100, 255, 1000, 1024, 10000, 1000000,
+          ],
         },
       ],
+      "@typescript-eslint/no-confusing-void-expression": "off",
+      complexity: ["error", { max: 20 }],
+      "eslint-comments/require-description": ["error", { ignore: [] }],
       "padding-line-between-statements": [
         "error",
         { blankLine: "always", prev: "multiline-expression", next: "return" },
@@ -63,8 +46,8 @@ const configs = [
         { blankLine: "always", prev: "switch", next: "return" },
         { blankLine: "always", prev: "try", next: "return" },
       ],
+      "@typescript-eslint/prefer-destructuring": "off",
     },
   },
+  eslintConfigPrettier,
 ];
-
-export default configs;
