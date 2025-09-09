@@ -1,12 +1,13 @@
 {
   "name": "@m1nsuppp/eslint-config",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "m1nsuppp's eslint configs",
   "type": "module",
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
-    "index.js"
+    "index.js",
+    "index.d.ts"
   ],
   "publishConfig": {
     "access": "public"

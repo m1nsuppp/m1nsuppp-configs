@@ -50,4 +50,9 @@ export const config = [
     },
   },
   eslintConfigPrettier,
+  {
+    rules: {
+      curly: ["error", "all"],
+    },
+  },
 ];
