@@ -1,0 +1,30 @@
+{
+  "name": "@m1nsuppp/tsconfig",
+  "version": "0.0.1",
+  "description": "m1nsuppp's shared TypeScript configs",
+  "type": "module",
+  "files": [
+    "tsconfig.browser.json",
+    "tsconfig.node.json",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./README.md",
+    "./browser": "./tsconfig.browser.json",
+    "./node": "./tsconfig.node.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "m1nsuppp",
+  "license": "MIT",
+  "peerDependencies": {
+    "typescript": ">=5.0.0"
+  },
+  "keywords": [
+    "tsconfig",
+    "typescript",
+    "config",
+    "shared"
+  ]
+}
